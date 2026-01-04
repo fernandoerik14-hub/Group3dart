@@ -1,0 +1,7 @@
+{
+  "name": "G3 Art Project Master",
+  "description": "Uma plataforma gamificada para gestão de projetos de stands, integrando briefing inteligente e geração de referências por IA.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

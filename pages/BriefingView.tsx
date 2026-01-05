@@ -302,7 +302,8 @@ const BriefingView: React.FC<BriefingViewProps> = ({ project, onBack, onUpdate }
               <input type="file" multiple className="hidden" ref={moodboardInputRef} onChange={(e) => {
                  const files = e.target.files;
                  if (!files) return;
-                 Array.from(files).forEach(f => {
+                 // Fix: Type f as any to avoid 'unknown' errors
+                 Array.from(files).forEach((f: any) => {
                    const reader = new FileReader();
                    reader.onload = (ev) => {
                      setForm(prev => ({...prev, moodboard: [...(prev.moodboard || []), { id: Math.random().toString(), url: ev.target?.result as string, title: f.name, type: 'image' }]}));
